@@ -19,14 +19,16 @@ function ProductDetails() {
     }
 
     return (
-        <div className="ProductDetail">
+        <div className="container ProductDetail">
             <h1>{product.name}</h1>
             <img className="Product-img" src={product.image_url} alt={product.name} />
             <h4>Product Description</h4>
             <p>{product.description}</p>
             <p className="lead">Price: ${product.price}</p>
-            <button onClick={() => addItem(id)} className="btn btn-primary m-1">Add to Cart</button>
-            <button onClick={() => removeItem(id)} className="btn btn-primary m-1">Delete</button>
+            <div className="container">
+                <button onClick={() => addItem(id)} className="btn btn-primary m-1 ProductDetails-btn">Add to Cart</button>
+                <button onClick={() => removeItem(id)} className="btn btn-primary m-1 ProductDetails-btn">Delete</button>
+            </div>
         </div>
     );
 }

@@ -7,7 +7,7 @@ import './ProductList.css';
 function ProductList() {
     const products = useSelector(store => store.products, shallowEqual);
     const productCards = Object.keys(products).map(id => (
-        <ProductCard product={products[id]} id={id} />
+        <ProductCard product={products[id]} key={id} id={id} />
     ));
 
     return (

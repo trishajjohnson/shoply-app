@@ -1,3 +1,7 @@
 .Product-img {
-    height: 300px;
+    width: 300px;
+}
+
+.ProductDetails-btn {
+    width: 25% !important;
 }

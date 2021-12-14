@@ -1,5 +1,5 @@
 import data from './data.json';
-import { ADD, DELETE } from './actionTypes';
+import { ADD, DELETE, REMOVE } from './actionTypes';
 const INITIAL_STATE = { products: data.products, cartItems: {} };
 
 function rootReducer(state=INITIAL_STATE, action) {
@@ -7,6 +7,12 @@ function rootReducer(state=INITIAL_STATE, action) {
         case ADD: {
             const cart = {...state.cartItems};
             cart[action.id] = (cart[action.id] || 0) + 1;
+            return {...state, cartItems: cart};
+        }
+
+        case REMOVE: {
+            const cart = {...state.cartItems};
+            delete cart[action.id];
             return {...state, cartItems: cart};
         }
 
